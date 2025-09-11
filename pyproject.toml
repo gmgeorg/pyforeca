@@ -1,9 +1,9 @@
 [project]
 name = "pyforeca"
-version = "0.1.0"
-description = ""
+version = "0.0.1"
+description = "Forecastable Component Analysis (ForeCA) in Python"
 authors = [
-    {name = "Georg",email = "im@gmge.org"}
+    {name = "Georg M. Goerg",email = "im@gmge.org"}
 ]
 license = {text = "MIT"}
 readme = "README.md"

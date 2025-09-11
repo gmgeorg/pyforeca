@@ -244,8 +244,11 @@ class ForeCA(BaseEstimator, TransformerMixin):
         )
 
         if is_df_input:
-            self.components_ = pd.DataFrame(self.components_, index=x_cols,
-                                            columns=_get_foreca_colnames(self.n_components))
+            self.components_ = pd.DataFrame(
+                self.components_,
+                index=x_cols,
+                columns=_get_foreca_colnames(self.n_components),
+            )
         return self
 
     def transform(self, X: NDArray[np.floating]) -> NDArray[np.floating]:

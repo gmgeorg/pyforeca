@@ -6,11 +6,10 @@ Usually ForeCA loadings are quite similar to SFA loadings, where SFA can be calc
 closed form & quickly.
 """
 
-from typing import Optional, Tuple
-
 import numpy as np
 import scipy.linalg as sla
 import sklearn
+
 from numpy.typing import NDArray
 from sklearn.utils.validation import check_array
 
@@ -19,7 +18,7 @@ def _sfa_eigendecomposition(
     U: NDArray[np.floating],
     *,
     eps: float = 1e-10,
-) -> Tuple[NDArray[np.floating], NDArray[np.floating]]:
+) -> tuple[NDArray[np.floating], NDArray[np.floating]]:
     """Solve the SFA generalized eigenproblem CΔ w = λ C w.
 
     Returns eigenvalues (ascending) and eigenvectors as columns (V ∈ R^{K×K}).
@@ -86,7 +85,7 @@ class SFA(sklearn.base.BaseEstimator, sklearn.base.TransformerMixin):
         Moore–Penrose pseudo-inverse of transformation_matrix_.
     """
 
-    def __init__(self, n_components: Optional[int] = None, *, copy: bool = True):
+    def __init__(self, n_components: int | None = None, *, copy: bool = True):
         self.n_components = n_components
         self.copy = copy
 

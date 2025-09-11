@@ -1,10 +1,10 @@
 """Module for linear algebra."""
 
 import warnings
-from typing import Union
 
 import numpy as np
 import scipy.linalg as sla
+
 from numpy.typing import NDArray
 
 
@@ -13,7 +13,7 @@ def l2_norm(x: np.ndarray) -> float:
     return np.linalg.norm(x)
 
 
-def quadratic_form(mat: np.ndarray, vec: np.ndarray) -> Union[float, complex]:
+def quadratic_form(mat: np.ndarray, vec: np.ndarray) -> float | complex:
     """
     Compute the quadratic form vec^H * mat * vec.
 
@@ -107,7 +107,7 @@ def fill_hermitian(mat: np.ndarray) -> np.ndarray:
     # Check that lower triangle contains NaN (as in R version)
     lower_values = mat[lower_indices]
     if not np.all(np.isnan(lower_values)):
-        warnings.warn("Lower triangular part should contain NaN values")
+        warnings.warn("Lower triangular part should contain NaN values", stacklevel=2)
 
     # Fill: result[i,j] = conj(result[j,i]) for i > j
     for i in range(n):

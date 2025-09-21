@@ -50,9 +50,9 @@ foreca = ForeCA(n_components=3, spectrum_method='welch')
 forecs = foreca.fit_transform(observed)
 
 # View forecastability of components
-print("Component spectral entropies (lower = more forecastable):")
+print("Component-wise Omega (higher = more forecastable):")
 for i, omega in enumerate(foreca.omegas_):
-    print(f"Component {i+1}: {omega:.4f}")
+    print(f"ForeC{i+1}: {omega:.4f}")
 
 ```
 

@@ -50,10 +50,34 @@ foreca = ForeCA(n_components=3, spectrum_method='welch')
 forecs = foreca.fit_transform(observed)
 
 # View forecastability of components
-print("Component spectral entropies (lower = more forecastable):")
+print("Component-wise Omega (higher = more forecastable):")
 for i, omega in enumerate(foreca.omegas_):
-    print(f"Component {i+1}: {omega:.4f}")
+    print(f"ForeC{i+1}: {omega:.4f}")
+
 ```
+
+```bash
+Forecastability Ω values:
+ForeC1: 0.505
+ForeC2: 0.193
+ForeC3: 0.013
+```
+
+`pyforeca.viz` provides several visualizations for spot-checking ForeCA transformers, and inspectings results from the training runs.
+
+```python
+from pyforeca import viz
+viz.plot_foreca(mod_foreca)
+```
+
+![ForeCA Results](imgs/toy-example-results.png)
+
+```python
+viz.plot_time_series(forecs)
+```
+
+![Forecastable components (ForeCs)](imgs/toy-example-forecs.png)
+
 
 ## Features (Alpha)
 

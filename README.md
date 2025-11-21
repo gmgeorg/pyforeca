@@ -48,6 +48,28 @@ for i, omega in enumerate(foreca.omegas_):
 
 ```
 
+```bash
+Forecastability Ω values:
+ForeC1: 0.505
+ForeC2: 0.193
+ForeC3: 0.013
+```
+
+`pyforeca.viz` provides several visualizations for spot-checking ForeCA transformers, and inspectings results from the training runs.
+
+```python
+from pyforeca import viz
+viz.plot_foreca(mod_foreca)
+```
+
+![ForeCA Results](imgs/toy-example-results.png)
+
+```python
+viz.plot_time_series(forecs)
+```
+
+![Forecastable components (ForeCs)](imgs/toy-example-forecs.png)
+
 ## Features
 
 * `ForeCA` estimator compatible with scikit-learn API (`fit`, `transform`, `fit_transform`)

@@ -42,9 +42,10 @@ foreca = ForeCA(n_components=3, spectrum_method='welch')
 forecs = foreca.fit_transform(observed)
 
 # View forecastability of components
-print("Component spectral entropies (lower = more forecastable):")
+print("Component-wise Omega (higher = more forecastable):")
 for i, omega in enumerate(foreca.omegas_):
-    print(f"Component {i+1}: {omega:.4f}")
+    print(f"ForeC{i+1}: {omega:.4f}")
+
 ```
 
 ## Features
@@ -53,8 +54,6 @@ for i, omega in enumerate(foreca.omegas_):
 * Utility functions for univariate and multivariate spectral entropy
 * Welch and periodogram spectral estimation options
 * Various helper functions for visualization of time series data, biplots (like R), and multivariate/univariate spectral densities.
-
-🚧 Expect incomplete coverage of features from the original R package — many options, controls, and diagnostics are not yet implemented.
 
 ## Example Use Cases
 

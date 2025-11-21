@@ -65,3 +65,5 @@ coverage.xml
 
 # Sphinx documentation
 docs/_build/
+
+git-update.sh

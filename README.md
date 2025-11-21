@@ -1,13 +1,7 @@
-# pyforeca: Forecastable Component Analysis (ForeCA) in Python (Alpha)
+# pyforeca: Forecastable Component Analysis (ForeCA) in Python
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-⚠️ **Alpha Notice**: This is an **early alpha release** of `pyforeca`.
-
-The API, features, and internals are very likely to change. Functionality is limited and stability is **not guaranteed**. Please do **not** rely on this package for production or long-term reproducibility yet. Use it only for experimentation and feedback.
-
----
 
 A Python implementation of Forecastable Component Analysis (ForeCA) — a dimension reduction technique for multivariate time series that finds linear combinations with maximum forecastability.  It is sklearn compatible, with the usual `.fit()` and `.transform()` methods.  Can be used as a drop-in replacement of `PCA()` or `FastICA()` for example.
 
@@ -31,8 +25,6 @@ The forecastability measure `Omega` equals 1 minus the normalized spectral entro
 poetry add git+https://github.com/gmgeorg/pyforeca.git#main
 ```
 
-⚠️ Since this is alpha software, breaking changes will occur frequently.
-
 ## Quick Start
 
 The code snippet here is a minimum working example to validate that your installation works. For real data examples and tutorials see below.
@@ -55,7 +47,7 @@ for i, omega in enumerate(foreca.omegas_):
     print(f"Component {i+1}: {omega:.4f}")
 ```
 
-## Features (Alpha)
+## Features
 
 * `ForeCA` estimator compatible with scikit-learn API (`fit`, `transform`, `fit_transform`)
 * Utility functions for univariate and multivariate spectral entropy
@@ -73,8 +65,6 @@ For interesting real world data examples see the tutorials & demo notebooks
 * weather/climate data: [`pyforeca-weather-example.ipynb`](notebooks/pyforeca-weather-example.ipynb)
 
 See also [SO posts](https://stats.stackexchange.com/search?q=%22foreca%22) for some data & code examples (in R).
-
-⚠️ At this alpha stage, these are illustrative — the implementation is still evolving.
 
 ## Algorithm (Simplified)
 
